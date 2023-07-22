@@ -185,9 +185,47 @@ body {
 /* About */
 
 .section-about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     height: 837px;
 }
 
+.about-text {
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 40px;
+}
+
+.about-image {
+    display: flex;
+    justify-content: space-between;
+    width: 1400px;
+    height: 560px;
+    margin: 20px auto;
+}
+
+.about-carousel {
+    display: flex;
+    justify-content: space-between;
+    width: 68px;
+    margin-top: 20px;
+}
+
+.carousel-item {
+    width: 16px;
+    height: 16px;
+    border-radius: 50px;
+    background: #0C0C0E;
+}
+
+.carousel-item:nth-child(1) {
+    background: #BB945F;
+
+}
 
 /* Favorites */
 
