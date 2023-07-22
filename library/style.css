@@ -210,21 +210,36 @@ body {
 
 .about-carousel {
     display: flex;
-    justify-content: space-between;
-    width: 68px;
-    margin-top: 20px;
+    width: 78px;
+    margin-top: 15px;
+}
+
+.carousel-button {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    border: none;
+    border-radius: 50px;
+    background: none;
+}
+
+.carousel-button:hover {
+    cursor: pointer;
 }
 
 .carousel-item {
     width: 16px;
     height: 16px;
     border-radius: 50px;
+    border: none;
     background: #0C0C0E;
 }
 
-.carousel-item:nth-child(1) {
+.about-carousel button:nth-of-type(1) div {
     background: #BB945F;
-
 }
 
 /* Favorites */
