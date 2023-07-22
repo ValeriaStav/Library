@@ -248,10 +248,73 @@ body {
     height: 1439px;
 }
 
+.seasons-title {
+    margin: 0;
+    margin-left: 20px;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+}
 
-/* CoffeShop */
+.seasons-form {
+    display: flex;
+    justify-content: space-between;
+    gap: 90.95px;
+    width: 698px;
+    margin: 40px 20px;
+}
 
-.section-coffeShop {
+.seasons-item {
+    font-family: Inter;
+    font-size: 20px;
+}
+
+.radio-button {
+    margin: 0 13.5px 0 0;
+    width: 17px;
+    height: 17px;
+    vertical-align: middle;
+    accent-color: #000;
+    font-weight: 700;
+}
+
+.radio-button:checked~.radio-text {
+    font-weight: 700;
+}
+
+.favorites-items {
+    outline: green solid 1px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    width: 1400px;
+    height: 1150px;
+    margin: 0 auto;
+}
+
+.book-description {
+    width: 550px;
+    height: 555px;
+    border: 1px solid #000;
+}
+
+.book-card {
+    outline: purple solid 1px;
+    width: 590px;
+    height: 555px;
+    position: relative;
+}
+
+.book-card img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+/* Coffee shop */
+
+.section-coffee-shop {
     height: 841px;
 }
 
@@ -265,6 +328,6 @@ body {
 
 /* LibraryCard */
 
-.section-libraryCard {
+.section-library-card {
     height: 614px;
 }
