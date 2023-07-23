@@ -259,21 +259,23 @@ body {
 .seasons-form {
     display: flex;
     justify-content: space-between;
-    gap: 90.95px;
-    width: 698px;
-    margin: 40px 20px;
+    width: 705px;
+    margin: 30px 20px;
 }
 
 .seasons-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     font-family: Inter;
     font-size: 20px;
 }
 
 .radio-button {
-    margin: 0 13.5px 0 0;
     width: 17px;
     height: 17px;
-    vertical-align: middle;
+    margin: 0;
+    margin-right: -17px;
     accent-color: #000;
     font-weight: 700;
 }
@@ -282,8 +284,11 @@ body {
     font-weight: 700;
 }
 
+.radio-text {
+    padding: 10px 5px 10px 40px;
+}
+
 .favorites-items {
-    outline: green solid 1px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -293,6 +298,12 @@ body {
     margin: 0 auto;
 }
 
+.spring-books,
+.summer-books,
+.autumn-books {
+    display: none;
+}
+
 .book-description {
     width: 550px;
     height: 555px;
@@ -300,7 +311,6 @@ body {
 }
 
 .book-card {
-    outline: purple solid 1px;
     width: 590px;
     height: 555px;
     position: relative;
@@ -312,7 +322,110 @@ body {
     bottom: 0;
 }
 
-/* Coffee shop */
+.book-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 14px 170px 14px 19px;
+}
+
+.book-picks {
+    display: flex;
+    flex-direction: column;
+    color: #000;
+    font-family: Forum;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.book-picks::after {
+    content: '';
+    background: #BB945F;
+    width: 60px;
+    height: 1px;
+}
+
+.book-info {
+    white-space: nowrap;
+}
+
+.book-title {
+    color: #000;
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.book-author {
+    color: #000;
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.book-plot {
+    height: 320px;
+    padding-top: 2px;
+    color: #000;
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.btn-buy {
+    width: 75px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 2px;
+    border: 1px solid #0C0C0E;
+    background: #FFF;
+    color: #0C0C0E;
+    text-align: center;
+    font-family: Inter;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    transition: .3s;
+}
+
+.btn-buy:hover {
+    border-radius: 2px;
+    border: 1px solid #BB945F;
+    background: #BB945F;
+    cursor: pointer;
+}
+
+.btn-own {
+    width: 75px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 2px;
+    border: 1px solid #BB945F;
+    background: #FFF;
+    color: #BB945F;
+    text-align: center;
+    font-family: Inter;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+}
+
+
+/* Coffee Shop */
 
 .section-coffee-shop {
     height: 841px;
@@ -326,7 +439,7 @@ body {
 }
 
 
-/* LibraryCard */
+/* Library Card */
 
 .section-library-card {
     height: 614px;
