@@ -112,6 +112,8 @@ body {
 }
 
 .section {
+    display: flex;
+    flex-direction: column;
     background: #FFF;
     outline: green solid 1px;
 }
@@ -120,7 +122,6 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    padding: 20px;
     text-align: center;
     color: #0C0C0E;
     font-family: Forum;
@@ -141,7 +142,7 @@ body {
     background: #0C0C0E;
     width: 50px;
     height: 1px;
-    margin: 20px auto;
+    margin: 20px auto 0;
 }
 
 
@@ -189,9 +190,11 @@ body {
     flex-direction: column;
     align-items: center;
     height: 837px;
+    padding: 20px 20px 40px;
 }
 
 .about-text {
+    margin: 40px auto 20px;
     color: #000;
     text-align: center;
     font-family: Inter;
@@ -205,13 +208,11 @@ body {
     justify-content: space-between;
     width: 1400px;
     height: 560px;
-    margin: 20px auto;
 }
 
 .about-carousel {
     display: flex;
-    width: 78px;
-    margin-top: 15px;
+    margin: 35px auto;
 }
 
 .carousel-button {
@@ -246,11 +247,11 @@ body {
 
 .section-favorites {
     height: 1439px;
+    padding: 20px 20px 40px;
 }
 
 .seasons-title {
-    margin: 0;
-    margin-left: 20px;
+    margin-top: 40px;
     font-family: Inter;
     font-size: 20px;
     font-weight: 700;
@@ -260,7 +261,7 @@ body {
     display: flex;
     justify-content: space-between;
     width: 705px;
-    margin: 30px 20px;
+    margin: 30px 0;
 }
 
 .seasons-item {
@@ -396,7 +397,7 @@ body {
     font-family: Inter;
     font-size: 10px;
     font-weight: 700;
-    line-height: normal;
+    /* line-height: normal; */
     letter-spacing: 1px;
     transition: .3s;
 }
@@ -420,7 +421,7 @@ body {
     font-family: Inter;
     font-size: 10px;
     font-weight: 700;
-    line-height: normal;
+    /* line-height: normal; */
     letter-spacing: 1px;
 }
 
@@ -428,14 +429,103 @@ body {
 /* Coffee Shop */
 
 .section-coffee-shop {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
     height: 841px;
+    padding: 20px 20px 40px;
 }
 
+.coffee-shop-text {
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+}
+
+.coffee-shop-menu {
+    height: 781px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.drinks-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.deserts-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 40px;
+}
+
+.deserts-menu .menu-item {
+    margin-right: -2px;
+}
+
+.deserts-menu .menu-name {
+    width: 210px;
+    text-align: end;
+}
+
+.menu-title {
+    color: #BB945F;
+    font-family: Forum;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.menu-name {
+    width: 197px;
+    white-space: nowrap;
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.menu-line {
+    content: '';
+    background: #BB945F;
+    width: 100px;
+    height: 1px;
+}
+
+.menu-price {
+    color: #000;
+    font-family: Forum;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
 
 /* Contacts */
 
 .section-contacts {
     height: 575px;
+    padding: 20px 20px 40px;
 }
 
 
@@ -443,4 +533,5 @@ body {
 
 .section-library-card {
     height: 614px;
+    padding: 20px 20px 40px;
 }
