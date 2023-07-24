@@ -524,8 +524,68 @@ body {
 /* Contacts */
 
 .section-contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
     height: 575px;
     padding: 20px 20px 40px;
+}
+
+.contacts-info {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 201px;
+}
+
+.text-info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 503px;
+    height: 380px;
+}
+
+.label-info {
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.phone-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    white-space: nowrap;
+}
+
+.senior-staff {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.staff-info {
+    font-weight: normal;
 }
 
 
