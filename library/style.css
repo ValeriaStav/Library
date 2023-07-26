@@ -224,7 +224,8 @@ body {
     border-radius: 50px;
     background: none;
 
-    &:hover {
+    &:hover,
+    & button:hover {
         cursor: pointer;
     }
 }
@@ -237,7 +238,7 @@ body {
     background: #0C0C0E;
 }
 
-.about-carousel button:nth-of-type(1) div {
+.about-carousel div:nth-of-type(1) button {
     background: #BB945F;
 }
 
@@ -294,11 +295,16 @@ body {
     height: 17px;
     margin: 0;
     accent-color: #000;
-    font-weight: 700;
+    transition: .3s;
 
+    &:hover,
+    &:hover~.radio-text,
     &:checked~.radio-text {
         font-weight: 700;
+        cursor: pointer;
+
     }
+
 }
 
 .radio-text {
@@ -594,6 +600,13 @@ body {
     letter-spacing: 2px;
     text-transform: capitalize;
     white-space: nowrap;
+    transition: .3s;
+
+    & .first-phone a:hover,
+    .second-phone a:hover,
+    .third-phone a:hover {
+        text-shadow: 2px -3px 3px #BB945F;
+    }
 }
 
 .senior-staff {
@@ -611,6 +624,11 @@ body {
 
 .staff-info {
     font-weight: normal;
+    transition: .3s;
+
+    &:hover a {
+        text-shadow: 2px -3px 3px #BB945F;
+    }
 }
 
 
@@ -815,6 +833,11 @@ body {
 .frame-address a {
     text-decoration: none;
     color: #FFF;
+    transition: .3s;
+
+    &:hover {
+        text-shadow: 2px -3px 3px #FFF;
+    }
 }
 
 .frame-time {
@@ -828,6 +851,17 @@ body {
     justify-content: center;
     align-items: flex-start;
     gap: 15px;
+    padding-left: 2px;
+    list-style: none;
+}
+
+.social-icon {
+    transition: .3s;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+    }
 }
 
 .footer-line {
@@ -854,8 +888,13 @@ body {
         padding-left: 40px;
     }
 
-    & div:nth-child(3) a {
+    & div a {
         color: #FFF;
         text-decoration: none;
+        transition: .3s;
+
+        &:hover {
+            text-shadow: 2px -3px 3px #FFF;
+        }
     }
 }
