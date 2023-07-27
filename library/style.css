@@ -1,3 +1,12 @@
+:root {
+    --black: #000000;
+    --smoky-black: #0C0C0E;
+    --grey: #8E8E8E;
+    --white: #FFFFFF;
+    --sand: #BB945F;
+}
+
+
 @font-face {
     font-family: Forum;
     src: url("assets/fonts/Forum-Regular.ttf");
@@ -29,7 +38,7 @@ body {
     justify-content: space-between;
     width: 1440px;
     margin: 0 auto;
-    background: silver;
+    background: var(--grey);
 }
 
 
@@ -40,7 +49,7 @@ body {
     justify-content: space-between;
     height: 90px;
     padding: 20px;
-    background: #0C0C0E;
+    background: var(--smoky-black);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
@@ -54,7 +63,7 @@ body {
 .header-name {
     align-self: center;
     margin: 0;
-    color: #FFF;
+    color: var(--white);
     font-family: Forum;
     font-weight: 400;
     letter-spacing: -0.2px;
@@ -70,7 +79,7 @@ body {
 }
 
 .nav-link {
-    color: #FFF;
+    color: var(--white);
     font-family: Inter;
     font-size: 20px;
     font-style: normal;
@@ -80,7 +89,7 @@ body {
     transition: .3s;
 
     &:hover {
-        text-shadow: 2px -3px 3px #FFF;
+        text-shadow: 2px -3px 3px var(--white);
     }
 }
 
@@ -113,7 +122,7 @@ body {
 .section {
     display: flex;
     flex-direction: column;
-    background: #FFF;
+    background: var(--white);
 }
 
 .section-title {
@@ -121,7 +130,7 @@ body {
     flex-direction: column;
     margin: 0;
     text-align: center;
-    color: #0C0C0E;
+    color: var(--smoky-black);
     font-family: Forum;
     font-size: 40px;
     font-weight: 400;
@@ -130,13 +139,13 @@ body {
     text-transform: capitalize;
 
     & a {
-        color: #0C0C0E;
+        color: var(--smoky-black);
         text-decoration: none;
     }
 
     &::after {
         content: '';
-        background: #0C0C0E;
+        background: var(--smoky-black);
         width: 50px;
         height: 1px;
         margin: 20px auto 0;
@@ -163,7 +172,7 @@ body {
     position: absolute;
     width: 1440px;
     height: 300px;
-    background: linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.10) 100%);
+    background: linear-gradient(180deg, var(--smoky-black) 0%, var(--smoky-black) 0.01%, rgba(18, 18, 21, 0.10) 100%);
 }
 
 .welcome-text {
@@ -173,8 +182,8 @@ body {
     margin: 0;
     padding: 35px 40px;
     top: 220px;
-    background: #0C0C0E;
-    color: #FFF;
+    background: var(--smoky-black);
+    color: var(--white);
     text-align: center;
     font-family: Forum;
     font-size: 40px;
@@ -197,7 +206,7 @@ body {
 
 .about-text {
     margin: 40px auto 20px;
-    color: #000;
+    color: var(--black);
     text-align: center;
     font-family: Inter;
     font-size: 20px;
@@ -239,11 +248,11 @@ body {
     height: 16px;
     border-radius: 50px;
     border: none;
-    background: #0C0C0E;
+    background: var(--smoky-black);
 }
 
 .about-carousel div:nth-of-type(1) button {
-    background: #BB945F;
+    background: var(--sand);
 }
 
 
@@ -298,7 +307,7 @@ body {
     width: 17px;
     height: 17px;
     margin: 0;
-    accent-color: #000;
+    accent-color: var(--black);
     transition: .3s;
 
     &:hover,
@@ -334,7 +343,7 @@ body {
 .book-description {
     width: 550px;
     height: 555px;
-    border: 1px solid #000;
+    border: 1px solid var(--black);
 }
 
 .book-card {
@@ -359,7 +368,7 @@ body {
 .book-picks {
     display: flex;
     flex-direction: column;
-    color: #000;
+    color: var(--black);
     font-family: Forum;
     font-size: 20px;
     font-weight: 400;
@@ -369,7 +378,7 @@ body {
 
     &::after {
         content: '';
-        background: #BB945F;
+        background: var(--sand);
         width: 60px;
         height: 1px;
     }
@@ -380,7 +389,7 @@ body {
 }
 
 .book-title {
-    color: #000;
+    color: var(--black);
     font-family: Inter;
     font-size: 15px;
     font-weight: 700;
@@ -390,7 +399,7 @@ body {
 }
 
 .book-author {
-    color: #000;
+    color: var(--black);
     font-family: Inter;
     font-size: 15px;
     font-weight: 700;
@@ -402,7 +411,7 @@ body {
 .book-plot {
     height: 320px;
     padding-top: 2px;
-    color: #000;
+    color: var(--black);
     font-family: Inter;
     font-size: 15px;
     font-weight: 400;
@@ -416,9 +425,9 @@ body {
     height: 30px;
     flex-shrink: 0;
     border-radius: 2px;
-    border: 1px solid #0C0C0E;
-    background: #FFF;
-    color: #0C0C0E;
+    border: 1px solid var(--smoky-black);
+    background: var(--white);
+    color: var(--smoky-black);
     text-align: center;
     font-family: Inter;
     font-size: 10px;
@@ -428,8 +437,8 @@ body {
 
     &:hover {
         border-radius: 2px;
-        border: 1px solid #BB945F;
-        background: #BB945F;
+        border: 1px solid var(--sand);
+        background: var(--sand);
         cursor: pointer;
     }
 }
@@ -439,9 +448,9 @@ body {
     height: 30px;
     flex-shrink: 0;
     border-radius: 2px;
-    border: 1px solid #BB945F;
-    background: #FFF;
-    color: #BB945F;
+    border: 1px solid var(--sand);
+    background: var(--white);
+    color: var(--sand);
     text-align: center;
     font-family: Inter;
     font-size: 10px;
@@ -503,7 +512,7 @@ body {
 }
 
 .menu-title {
-    color: #BB945F;
+    color: var(--sand);
     font-family: Forum;
     font-size: 40px;
     font-weight: 400;
@@ -522,7 +531,7 @@ body {
 .menu-name {
     width: 197px;
     white-space: nowrap;
-    color: #000;
+    color: var(--black);
     font-family: Inter;
     font-size: 20px;
     font-style: normal;
@@ -534,13 +543,13 @@ body {
 
 .menu-line {
     content: '';
-    background: #BB945F;
+    background: var(--sand);
     width: 100px;
     height: 1px;
 }
 
 .menu-price {
-    color: #000;
+    color: var(--black);
     font-family: Forum;
     font-size: 20px;
     font-style: normal;
@@ -570,7 +579,7 @@ body {
 
     & a {
         text-decoration: none;
-        color: #000;
+        color: var(--black);
     }
 }
 
@@ -583,7 +592,7 @@ body {
 }
 
 .label-info {
-    color: #000;
+    color: var(--black);
     font-family: Inter;
     font-size: 20px;
     font-weight: 700;
@@ -596,7 +605,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    color: #000;
+    color: var(--black);
     font-family: Inter;
     font-size: 20px;
     font-weight: 400;
@@ -609,7 +618,7 @@ body {
     & .first-phone a:hover,
     .second-phone a:hover,
     .third-phone a:hover {
-        text-shadow: 2px -3px 3px #BB945F;
+        text-shadow: 2px -3px 3px var(--sand);
     }
 }
 
@@ -617,7 +626,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    color: #000;
+    color: var(--black);
     font-family: Inter;
     font-size: 20px;
     font-weight: 700;
@@ -631,7 +640,7 @@ body {
     transition: .3s;
 
     &:hover a {
-        text-shadow: 2px -3px 3px #BB945F;
+        text-shadow: 2px -3px 3px var(--sand);
     }
 }
 
@@ -659,7 +668,7 @@ body {
 }
 
 .find-card-title {
-    color: #000;
+    color: var(--black);
     font-family: Inter;
     font-size: 30px;
     font-weight: 400;
@@ -680,7 +689,7 @@ body {
     width: 600px;
     height: 387px;
     flex-shrink: 0;
-    border: 3px solid #BB945F;
+    border: 3px solid var(--sand);
 }
 
 .card-gold-bg {
@@ -691,7 +700,7 @@ body {
     height: 272px;
     margin: 18px auto;
     padding: 20px 20px 25px;
-    background: #BB945F;
+    background: var(--sand);
 
     & input {
         width: 520px;
@@ -710,7 +719,7 @@ body {
     height: 50px;
     margin: 0;
     margin-bottom: -6px;
-    color: #000;
+    color: var(--black);
     font-family: Forum;
     font-size: 30px;
     line-height: 50px;
@@ -722,9 +731,9 @@ body {
     margin: 0 auto;
     padding: 10px 40px;
     border-radius: 2px;
-    background: #FFF;
-    border: 1px solid #0C0C0E;
-    color: #0C0C0E;
+    background: var(--white);
+    border: 1px solid var(--smoky-black);
+    color: var(--smoky-black);
     text-align: center;
     font-family: Inter;
     font-size: 20px;
@@ -734,8 +743,8 @@ body {
 
     &:hover {
         border-radius: 2px;
-        border: 1px solid #BB945F;
-        background: #BB945F;
+        border: 1px solid var(--sand);
+        background: var(--sand);
     }
 }
 
@@ -750,7 +759,7 @@ body {
 }
 
 .get-card-title {
-    color: #000;
+    color: var(--black);
     text-align: center;
     font-family: Forum;
     font-size: 30px;
@@ -758,7 +767,7 @@ body {
 }
 
 .get-card-text {
-    color: #000;
+    color: var(--black);
     text-align: right;
     font-family: Inter;
     font-size: 20px;
@@ -779,10 +788,10 @@ body {
     padding: 10px 0px;
     justify-content: center;
     align-items: center;
-    background: #fff;
+    background: var(--white);
     border-radius: 2px;
-    border: 1px solid #0C0C0E;
-    color: #0C0C0E;
+    border: 1px solid var(--smoky-black);
+    color: var(--smoky-black);
     text-align: center;
     font-family: Inter;
     font-size: 10px;
@@ -793,8 +802,8 @@ body {
     &:hover {
         cursor: pointer;
         border-radius: 2px;
-        border: 1px solid #BB945F;
-        background: #BB945F;
+        border: 1px solid var(--sand);
+        background: var(--sand);
     }
 }
 
@@ -809,7 +818,7 @@ body {
     width: 1440px;
     height: 250px;
     padding: 20px 20px 42px;
-    background: #0C0C0E;
+    background: var(--smoky-black);
 }
 
 .footer-frame-container {
@@ -827,7 +836,7 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-shrink: 0;
-    color: #FFF;
+    color: var(--white);
     font-family: Inter;
     font-size: 15px;
     font-weight: 400;
@@ -836,11 +845,11 @@ body {
 
 .frame-address a {
     text-decoration: none;
-    color: #FFF;
+    color: var(--white);
     transition: .3s;
 
     &:hover {
-        text-shadow: 2px -3px 3px #FFF;
+        text-shadow: 2px -3px 3px var(--white);
     }
 }
 
@@ -872,7 +881,7 @@ body {
     margin: 0 0 18px;
     width: 1400px;
     height: 1px;
-    background: #FFF;
+    background: var(--white);
 }
 
 .footer-rss {
@@ -880,7 +889,7 @@ body {
     justify-content: space-between;
     width: 1400px;
     height: 22px;
-    color: #FFF;
+    color: var(--white);
     text-align: center;
     font-family: Inter;
     font-size: 20px;
@@ -893,12 +902,12 @@ body {
     }
 
     & div a {
-        color: #FFF;
+        color: var(--white);
         text-decoration: none;
         transition: .3s;
 
         &:hover {
-            text-shadow: 2px -3px 3px #FFF;
+            text-shadow: 2px -3px 3px var(--white);
         }
     }
 }
