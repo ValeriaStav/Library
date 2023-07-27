@@ -315,13 +315,20 @@ body {
     &:checked~.radio-text {
         font-weight: 700;
         cursor: pointer;
-
     }
 
+    &:hover~.radio-text:last-child,
+    &:checked~.radio-text:last-child {
+        padding-left: 15px;
+    }
 }
 
 .radio-text {
     padding: 10px 5px 10px 20px;
+
+    &:last-child:hover {
+        padding-left: 15px;
+    }
 }
 
 .favorites-items {
