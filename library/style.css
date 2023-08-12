@@ -59,6 +59,7 @@ body {
     justify-content: flex-end;
     align-items: center;
     gap: 40px;
+    position: relative;
 }
 
 .header-name {
@@ -101,7 +102,7 @@ body {
 }
 
 .header-burger {
-    /* display: none; */
+    display: none;
 }
 
 
@@ -143,13 +144,16 @@ body {
 .section-welcome {
     position: relative;
     display: flex;
-
-    & img {
-        width: 100%;
-        height: 600px;
-        background-size: contain;
-    }
 }
+
+.welcome-img {
+    width: 100%;
+    height: 600px;
+    background: url(assets/img/welcome-1440.jpg) 100% 100% no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
 
 .welcome-overlay {
     display: flex;
@@ -458,6 +462,10 @@ body {
     font-size: 20px;
     line-height: 40px;
     letter-spacing: 2px;
+
+    & span {
+        letter-spacing: 1.5px;
+    }
 }
 
 .coffee-shop-menu {
@@ -896,7 +904,26 @@ body {
     }
 
     .header-nav {
-        display: none;
+        width: 332px;
+        height: 570px;
+        background: var(--smoky-black);
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        padding: 100px 107px;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-link {
+        white-space: nowrap;
+        line-height: 50px;
     }
 
     .header-burger {
@@ -905,7 +932,32 @@ body {
         justify-content: space-between;
         width: 45px;
         height: 20px;
+        transition: .3s;
     }
+
+    .header-icon {
+        position: absolute;
+        right: 105px;
+        z-index: 2;
+    }
+
+    .header-burger-close {
+        width: 44px;
+        height: 44px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 2;
+
+        & .burger-line:first-child {
+            transform: translateY(23px) rotate(45deg);
+        }
+
+        & .burger-line:last-child {
+            transform: translateY(23px) rotate(-45deg);
+        }
+    }
+
 
     .burger-line {
         width: 100%;
@@ -915,19 +967,14 @@ body {
         transition: .3s;
     }
 
-    /* Main */
 
-    padding-left: 21px;
-    padding-right: 19px;
+    /* Main */
 
 
     /* Welcome */
 
-    .section-welcome img {
-        width: 100%;
-        height: 600px;
-        background-size: cover;
-        background-repeat: no-repeat;
+    .section-welcome {
+        max-width: 1024px;
     }
 
     .welcome-overlay {
@@ -1012,6 +1059,10 @@ body {
 
     .map-info {
         margin: 0 auto;
+
+        & img {
+            width: 100%;
+        }
     }
 
 
@@ -1055,4 +1106,23 @@ body {
         padding-left: 0;
         padding-right: 17px;
     }
+}
+
+
+@media (max-width: 768px) {
+
+    /* Welcome */
+
+    .welcome-img {
+        width: 100%;
+        height: 600px;
+        background: url(assets/img/welcome-768.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .seasons-form {
+        width: 100%;
+    }
+
 }
