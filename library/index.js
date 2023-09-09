@@ -3,6 +3,8 @@ console.log(
 );
 
 (function () {
+    // Burger-menu
+
     const headerBurger = document.querySelector(".header-burger");
     const menuBurger = document.querySelector(".header-nav");
     const menuBurgerClose = document.querySelector(".header-burger-close");
@@ -23,5 +25,60 @@ console.log(
     });
     main.addEventListener("click", () => {
         menuBurger.classList.remove("header-nav-active");
+    });
+
+    // Header icon
+
+    const headerIcon = document.querySelector(".header-icon");
+    const menuProfile = document.querySelector(".menu-profile");
+
+    headerIcon.addEventListener("click", () => {
+        menuProfile.classList.toggle("menu-profile-active");
+    });
+    main.addEventListener("click", () => {
+        menuProfile.classList.remove("menu-profile-active");
+    });
+
+    // Carousel-buttons
+
+    const BTN_FIRST = document.querySelector("#btn-first");
+    const BTN_SECOND = document.querySelector("#btn-second");
+    const BTN_THIRD = document.querySelector("#btn-third");
+    const BTN_FOURTH = document.querySelector("#btn-fourth");
+    const BTN_FIFTH = document.querySelector("#btn-fifth");
+    const CAROUSEL = document.querySelector("#carousel");
+
+    const moveFirst = () => {
+        CAROUSEL.classList.add("transition-first");
+        BTN_FIRST.removeEventListener("click", moveFirst);
+    };
+    const moveSecond = () => {
+        CAROUSEL.classList.add("transition-second");
+        BTN_SECOND.removeEventListener("click", moveSecond);
+    };
+    const moveThird = () => {
+        CAROUSEL.classList.add("transition-third");
+        BTN_THIRD.removeEventListener("click", moveThird);
+    };
+
+    BTN_FIRST.addEventListener("click", moveFirst);
+
+    BTN_SECOND.addEventListener("click", moveSecond);
+
+    BTN_THIRD.addEventListener("click", moveThird);
+
+    CAROUSEL.addEventListener("animationend", (animationEvent) => {
+        if (animationEvent.animationsName === "move-first") {
+            CAROUSEL.classList.remove("transition-first");
+            const firstItem = document.querySelector("#item-first").innerHTML;
+            document.querySelector("#item-second").innerHTML = firstItem;
+        } else if (animation.animationsName === "move-second") {
+            CAROUSEL.classList.remove("transition-second");
+        } else if (animation.animationsName === "move-third") {
+            CAROUSEL.classList.remove("transition-third");
+        }
+        BTN_FIRST.addEventListener("click", moveFirst);
+        BTN_SECOND.addEventListener("click", moveSecond);
+        BTN_THIRD.addEventListener("click", moveThird);
     });
 })();

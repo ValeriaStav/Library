@@ -130,6 +130,77 @@ body {
     display: none;
 }
 
+.profile {
+    position: relative;
+}
+
+.menu-profile {
+    display: none;
+}
+
+.menu-profile-active {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 35px;
+    right: 0;
+    visibility: visible;
+    width: 80px;
+    height: 115px;
+    margin: 0;
+    background: var(--white);
+    z-index: 1;
+    transition: .3s ease-in-out;
+
+}
+
+.profile-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-name {
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center;
+    margin: 5px auto;
+}
+
+.profile-line {
+    content: "";
+    background: var(--sand);
+    width: 40px;
+    height: 1px;
+}
+
+.profile-items {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+    &>button {
+        margin-bottom: 8px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        text-align: center;
+        font-family: Inter;
+        font-size: 15px;
+        line-height: 20px;
+
+        &:hover {
+            color: var(--sand);
+            transition: .3s;
+        }
+    }
+}
+
+
 /* Main */
 .main {
     background: var(--white);
@@ -243,18 +314,15 @@ body {
     display: flex;
 }
 
-.carousel-item {
+.carousel {
     gap: 25px;
+    position: relative;
 }
 
-#item-center,
-#item-right {
-    display: none;
-}
-
-.carousel-card {
+.carousel-item {
     width: 32.2%;
 }
+
 
 .about-wrapper button {
     display: none;
@@ -304,6 +372,51 @@ body {
 
 .about-carousel div:nth-of-type(1) button {
     background: var(--sand);
+}
+
+@keyframes move-first {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 34%;
+    }
+}
+
+.transition-first {
+    animation-name: move-first;
+    animation-duration: 3s;
+}
+
+@keyframes move-second {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: -34%;
+    }
+}
+
+.transition-second {
+    animation-name: move-second;
+    animation-duration: 3s;
+}
+
+@keyframes move-third {
+    from {
+        left: 0%;
+    }
+
+    to {
+        left: -68%;
+    }
+}
+
+.transition-third {
+    animation-name: move-third;
+    animation-duration: 3s;
 }
 
 /* Favorites */
@@ -1178,11 +1291,6 @@ body {
         transition: 0.3s;
     }
 
-    .header-icon {
-        position: absolute;
-        right: 85px;
-        z-index: 2;
-    }
 
     .header-burger-close {
         width: 44px;
@@ -1240,13 +1348,10 @@ body {
         width: auto;
     }
 
-    /* .carousel-wrapper {
-        display: flex;
-        justify-content: space-between;
-    } */
-
-    .about-wrapper :nth-child(3),
-    .about-wrapper :nth-child(4) {
+    .carousel :nth-child(2),
+    .carousel :nth-child(3),
+    .carousel :nth-child(4),
+    .carousel :nth-child(5) {
         display: none;
     }
 
