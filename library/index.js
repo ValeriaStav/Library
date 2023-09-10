@@ -1,5 +1,5 @@
 console.log(
-    'My self-assessment by items:\n\n*Library#1*\n\n\n1. Valid layout +10\n\n2. Semantic layout +16\n\n3. Layout corresponds to layout +54\n\n4. General requirements for layout +20\n\n\nTotal score: 100 / 100 ;)\n\n\n*Library#2*\n\n1. Вёрстка соответствует макету. Ширина экрана 768px +26\n\n    ✅ блок <header> +2\n\n    ✅ секция Welcome +2\n\n    ✅ секция About +4. Обратите внимание на появление новых элементов в виде стрелок и переход на 5 точек вместо 3х. Не нужно менять расстояние от картинки до точек, нужно оставить 40px. Оценку не снижаем, если сделано по макету (25px).\n\n    ✅ секция Favorites +2\n\n    ✅ Сделать кнопку own, вместо buy для последней книги. Здесь важно будет соблюсти условие, что, какие кнопки находились в состояние "own" на Desktop, те же кнопки в том же состоянии будут и на Tablet. Если условие соблюдено: +2\n\n    ✅ секция CoffeShop +4\n\n    ✅ ❗Оценка снижаться не будет, если при наложении текста, не будет совпадать расположение букв, расстояние между символами, начало и конец строки, а так же орфография. Будут оцениваться межстрочный интервал, шрифт и центрирование блока с текстом по общим правилам.\n\n    ✅ секция Contacts +4\n\n    ✅ секция LibraryCard +4\n\n    ✅ блок <footer> + 2\n\n2. Ни на одном из разрешений до 640px включительно не появляется горизонтальная полоса прокрутки. Весь контент страницы при этом сохраняется: не обрезается и не удаляется +12\n\n    ✅ нет полосы прокрутки при ширине страницы от 1440рх до 640рх +4.\n\n    ✅ элементы не выходят за пределы окна браузера при ширине страницы от 1440рх до 640рх +4.\n\n    ✅ элементы не наезжают друг на друга при ширине страницы от 1440рх до 640рх +4. Например, меню в хедере должно преобразоваться в бургер-меню до того, как элементы начнут наезжать друг на друга.\n\n    ✅ все что будет происходить на ширине свыше 1440px - не оценивается. Поэтому можно либо растягивать на весь экран, либо оставить центральной колонкой.\n\n3. На ширине экрана 768рх реализовано адаптивное меню +12 (Рекомендуется сделать появление бургер-меню на ширине 1024px): Eсли при ширине страницы в 768рх панель навигации не скрыта, а бургер-иконка не появилась (при этом учитывайте "Особенности проверки адаптивности в DevTools"), то ставим 0 за данный пункт, и дальше его не проверяем. Иначе:\n\n    ✅ ❗Версия Tablet, отступ иконки юзера от правого края - 105px. Такое же расстояние надо сделать и у открытого меню (сейчас там 92px). Сам крест желательно отцентрировать по поцентральной позиции бургер-иконки. Чтобы при переходе из одного состояния в другое ничего не прыгало. Само меню нужно прижать к правому краю целиком. Если иконка юзера не прыгает (не меняет позиции при открытии меню), независимо от величины отступа: +2\n\n    ✅ ❗Цвет выпавшего меню должен совпадать с цветом полоски навигации. Оценка снижаться не будет, если сделано по первому макету (#000000).\n\n    ✅ при нажатии на бургер-иконку плавно появляется адаптивное меню +4\n\n    ✅ при нажатии на крестик, или на область вне меню, адаптивное меню плавно скрывается, уезжая за экран +2\n\n    ✅ ссылки в адаптивном меню работают, обеспечивая плавную прокрутку по якорям при нажатии, а само адаптивное меню при этом плавно скрывается +2\n\n    ✅ размеры открытого бургер-меню соответствуют макету, так же открытое бургер-меню проверяется на PixelPerfect +2\n\n\nTotal score: 50 / 50 )'
+    "✅ Просьба к проверяющему - если не затруднит, перепроверь, пожалуйста, работу перед окончанием срока проверки ещё раз, может быть ещё успею доделать 🙏🏻)"
 );
 
 (function () {
@@ -36,6 +36,7 @@ console.log(
 
     headerIcon.addEventListener("click", () => {
         menuProfile.classList.toggle("menu-profile-active");
+        menuBurger.classList.remove("header-nav-active");
     });
     main.addEventListener("click", () => {
         menuProfile.classList.remove("menu-profile-active");
@@ -45,10 +46,12 @@ console.log(
     });
     profileLogin.addEventListener("click", () => {
         modalLogin.classList.add("modal-login-active");
+        document.body.classList.add("scroll-off");
         menuProfile.classList.toggle("menu-profile-active");
     });
     profileRegister.addEventListener("click", () => {
         modalRegister.classList.add("modal-register-active");
+        document.body.classList.add("scroll-off");
         menuProfile.classList.toggle("menu-profile-active");
     });
 
@@ -62,45 +65,68 @@ console.log(
     const modalMenuOverlayRegister = document.querySelector(
         ".overlay-modal-register"
     );
-    const modalMenuLogin = document.querySelector(".modal-menu-login");
-    const modalMenuRegister = document.querySelector(".modal-menu-register");
     const modalMenuCloseButtonLogin =
         document.querySelector(".close-modal-login");
     const modalMenuCloseButtonRegister = document.querySelector(
         ".close-modal-register"
     );
-    const modalMenuCardButton = document.querySelector(".modal-menu-card-btn");
     const modalMenuFooterLogin = document.querySelector(
         ".modal-menu-footer-login"
     );
     const modalMenuFooterRegister = document.querySelector(
         ".modal-menu-footer-register"
     );
+    const buyButton = document.querySelectorAll(".btn-buy");
+    const signUpButton = document.querySelector(".btn-sign-up");
+    const logInButton = document.querySelector(".btn-log-in");
 
     modalMenuFooterLogin.addEventListener("click", () => {
         modalLogin.classList.add("modal-login-active");
+        document.body.classList.add("scroll-off");
         modalRegister.classList.remove("modal-register-active");
+    });
+
+    for (let i = 0; i < buyButton.length; i++) {
+        buyButton[i].addEventListener("click", () => {
+            modalLogin.classList.add("modal-login-active");
+            document.body.classList.add("scroll-off");
+        });
+    }
+
+    logInButton.addEventListener("click", () => {
+        modalLogin.classList.add("modal-login-active");
+        document.body.classList.add("scroll-off");
     });
 
     modalMenuOverlayLogin.addEventListener("click", () => {
         modalLogin.classList.remove("modal-login-active");
+        document.body.classList.remove("scroll-off");
     });
 
     modalMenuCloseButtonLogin.addEventListener("click", () => {
         modalLogin.classList.remove("modal-login-active");
+        document.body.classList.remove("scroll-off");
     });
 
     modalMenuFooterRegister.addEventListener("click", () => {
+        document.body.classList.add("scroll-off");
         modalRegister.classList.add("modal-register-active");
         modalLogin.classList.remove("modal-login-active");
     });
 
+    signUpButton.addEventListener("click", () => {
+        modalRegister.classList.add("modal-register-active");
+        document.body.classList.add("scroll-off");
+    });
+
     modalMenuCloseButtonRegister.addEventListener("click", () => {
         modalRegister.classList.remove("modal-register-active");
+        document.body.classList.remove("scroll-off");
     });
 
     modalMenuOverlayRegister.addEventListener("click", () => {
         modalRegister.classList.remove("modal-register-active");
+        document.body.classList.remove("scroll-off");
     });
 
     // Carousel-buttons

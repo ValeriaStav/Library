@@ -118,6 +118,8 @@ body {
     height: 28px;
     -webkit-transition: 0.3s;
     transition: 0.3s;
+    position: relative;
+    z-index: 2;
 }
 
 .header-icon:hover {
@@ -151,7 +153,7 @@ body {
     margin: 0;
     background: var(--white);
     z-index: 1;
-    transition: .3s ease-in-out;
+    transition: opacity 1s ease-in-out 1s;
 
 }
 
@@ -200,6 +202,10 @@ body {
 }
 
 /* Modals */
+
+.scroll-off {
+    overflow: hidden;
+}
 
 .modal-wrapper {
     display: none;
@@ -801,6 +807,10 @@ body {
 }
 
 .btn-own {
+    display: none;
+}
+
+.btn-own-active {
     width: 75px;
     height: 30px;
     border-radius: 2px;
@@ -1053,8 +1063,6 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
@@ -1212,8 +1220,8 @@ body {
     gap: 20px;
 }
 
-.get-card-btn1,
-.get-card-btn2 {
+.btn-sign-up,
+.btn-log-in {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1239,8 +1247,8 @@ body {
     transition: 0.3s;
 }
 
-.get-card-btn1:hover,
-.get-card-btn2:hover {
+.btn-sign-up:hover,
+.btn-log-in:hover {
     cursor: pointer;
     border-radius: 2px;
     border: 1px solid var(--sand);
