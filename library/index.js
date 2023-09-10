@@ -31,12 +31,38 @@ console.log(
 
     const headerIcon = document.querySelector(".header-icon");
     const menuProfile = document.querySelector(".menu-profile");
+    const profileLogin = document.querySelector(".profile-login");
 
     headerIcon.addEventListener("click", () => {
         menuProfile.classList.toggle("menu-profile-active");
     });
     main.addEventListener("click", () => {
         menuProfile.classList.remove("menu-profile-active");
+    });
+    headerBurger.addEventListener("click", () => {
+        menuProfile.classList.remove("menu-profile-active");
+    });
+    profileLogin.addEventListener("click", () => {
+        modalWrapper.classList.add("modal-wrapper-active");
+        menuProfile.classList.toggle("menu-profile-active");
+    });
+
+    // Modals
+
+    const modalWrapper = document.querySelector(".modal-wrapper");
+    const modalMenuOverlay = document.querySelector(".modal-menu-overlay");
+    const modalMenuLogin = document.querySelector(".modal-menu-login");
+    const modalMenuCloseButton = document.querySelector(
+        ".modal-menu-close-btn"
+    );
+    const modalMenuCardButton = document.querySelector(".modal-menu-card-btn");
+
+    modalMenuOverlay.addEventListener("click", () => {
+        modalWrapper.classList.remove("modal-wrapper-active");
+    });
+
+    modalMenuCloseButton.addEventListener("click", () => {
+        modalWrapper.classList.remove("modal-wrapper-active");
     });
 
     // Carousel-buttons
