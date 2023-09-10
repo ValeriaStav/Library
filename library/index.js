@@ -32,6 +32,7 @@ console.log(
     const headerIcon = document.querySelector(".header-icon");
     const menuProfile = document.querySelector(".menu-profile");
     const profileLogin = document.querySelector(".profile-login");
+    const profileRegister = document.querySelector(".profile-register");
 
     headerIcon.addEventListener("click", () => {
         menuProfile.classList.toggle("menu-profile-active");
@@ -43,26 +44,63 @@ console.log(
         menuProfile.classList.remove("menu-profile-active");
     });
     profileLogin.addEventListener("click", () => {
-        modalWrapper.classList.add("modal-wrapper-active");
+        modalLogin.classList.add("modal-login-active");
+        menuProfile.classList.toggle("menu-profile-active");
+    });
+    profileRegister.addEventListener("click", () => {
+        modalRegister.classList.add("modal-register-active");
         menuProfile.classList.toggle("menu-profile-active");
     });
 
     // Modals
 
-    const modalWrapper = document.querySelector(".modal-wrapper");
-    const modalMenuOverlay = document.querySelector(".modal-menu-overlay");
+    const modalLogin = document.querySelector(".modal-login");
+    const modalRegister = document.querySelector(".modal-register");
+    const modalMenuOverlayLogin = document.querySelector(
+        ".overlay-modal-login"
+    );
+    const modalMenuOverlayRegister = document.querySelector(
+        ".overlay-modal-register"
+    );
     const modalMenuLogin = document.querySelector(".modal-menu-login");
-    const modalMenuCloseButton = document.querySelector(
-        ".modal-menu-close-btn"
+    const modalMenuRegister = document.querySelector(".modal-menu-register");
+    const modalMenuCloseButtonLogin =
+        document.querySelector(".close-modal-login");
+    const modalMenuCloseButtonRegister = document.querySelector(
+        ".close-modal-register"
     );
     const modalMenuCardButton = document.querySelector(".modal-menu-card-btn");
+    const modalMenuFooterLogin = document.querySelector(
+        ".modal-menu-footer-login"
+    );
+    const modalMenuFooterRegister = document.querySelector(
+        ".modal-menu-footer-register"
+    );
 
-    modalMenuOverlay.addEventListener("click", () => {
-        modalWrapper.classList.remove("modal-wrapper-active");
+    modalMenuFooterLogin.addEventListener("click", () => {
+        modalLogin.classList.add("modal-login-active");
+        modalRegister.classList.remove("modal-register-active");
     });
 
-    modalMenuCloseButton.addEventListener("click", () => {
-        modalWrapper.classList.remove("modal-wrapper-active");
+    modalMenuOverlayLogin.addEventListener("click", () => {
+        modalLogin.classList.remove("modal-login-active");
+    });
+
+    modalMenuCloseButtonLogin.addEventListener("click", () => {
+        modalLogin.classList.remove("modal-login-active");
+    });
+
+    modalMenuFooterRegister.addEventListener("click", () => {
+        modalRegister.classList.add("modal-register-active");
+        modalLogin.classList.remove("modal-login-active");
+    });
+
+    modalMenuCloseButtonRegister.addEventListener("click", () => {
+        modalRegister.classList.remove("modal-register-active");
+    });
+
+    modalMenuOverlayRegister.addEventListener("click", () => {
+        modalRegister.classList.remove("modal-register-active");
     });
 
     // Carousel-buttons

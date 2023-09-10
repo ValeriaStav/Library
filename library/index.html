@@ -942,7 +942,7 @@
                     </div>
                 </div>
             </footer>
-            <div class="modal-wrapper">
+            <div class="modal-wrapper modal-login">
                 <div class="modal-menu-login">
                     <div class="modal-menu-title">Login</div>
                     <form class="modal-menu-form">
@@ -964,9 +964,11 @@
                     </form>
                     <div class="modal-menu-footer">
                         <span>Don’t have an account?</span
-                        ><a href="#">Register</a>
+                        ><a class="modal-menu-footer-register" href="#"
+                            >Register</a
+                        >
                     </div>
-                    <div class="modal-menu-close-btn">
+                    <div class="modal-menu-close-btn close-modal-login">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="19"
@@ -978,7 +980,57 @@
                         </svg>
                     </div>
                 </div>
-                <div class="modal-menu-overlay"></div>
+                <div class="modal-menu-overlay overlay-modal-login"></div>
+            </div>
+            <div class="modal-wrapper modal-register">
+                <div class="modal-menu-register">
+                    <div class="modal-menu-title">Register</div>
+                    <form class="modal-menu-form">
+                        <label class="modal-menu-card-name">First name</label>
+                        <input
+                            type="text"
+                            name="firstName"
+                            id="firstName"
+                            required
+                        />
+                        <label class="modal-menu-card-name">Last name</label>
+                        <input
+                            type="text"
+                            name="lastName"
+                            id="lastName"
+                            required
+                        />
+                        <label class="modal-menu-card-name">E-mail</label>
+                        <input type="email" name="email" id="email" required />
+                        <label class="modal-menu-card-name">Password</label>
+                        <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            minlength="8"
+                            required
+                        />
+                        <button class="modal-menu-card-btn" type="submit">
+                            Sign Up
+                        </button>
+                    </form>
+                    <div class="modal-menu-footer">
+                        <span>Already have an account?</span
+                        ><a class="modal-menu-footer-login" href="#">Login</a>
+                    </div>
+                    <div class="modal-menu-close-btn close-modal-register">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="19"
+                            height="19"
+                            viewBox="0 0 19 19"
+                        >
+                            <path d="M2 16.8507L17 2.00003" stroke-width="3" />
+                            <path d="M2 2.14926L17 17" stroke-width="3" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="modal-menu-overlay overlay-modal-register"></div>
             </div>
         </div>
         <script src="index.js"></script>
