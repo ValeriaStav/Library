@@ -1,9 +1,9 @@
 console.log(
-    "✅ Просьба к проверяющему - если не затруднит, перепроверь, пожалуйста, работу перед окончанием срока проверки ещё раз, может быть ещё успею доделать 🙏🏻)"
+    "✅ Просьба к проверяющему - если не затруднит, перепроверь, пожалуйста, работу перед окончанием срока проверки ещё раз, может быть ещё успею доделать 🙏🏻\n\n)"
 );
 
 (function () {
-    // Burger-menu
+    // ---------- Burger-menu ---------- //
 
     const headerBurger = document.querySelector(".header-burger");
     const menuBurger = document.querySelector(".header-nav");
@@ -27,7 +27,7 @@ console.log(
         menuBurger.classList.remove("header-nav-active");
     });
 
-    // Header icon
+    // ---------- Header icon ---------- //
 
     const headerIcon = document.querySelector(".header-icon");
     const menuProfile = document.querySelector(".menu-profile");
@@ -55,7 +55,7 @@ console.log(
         menuProfile.classList.toggle("menu-profile-active");
     });
 
-    // Modals
+    // ---------- Modals ---------- //
 
     const modalLogin = document.querySelector(".modal-login");
     const modalRegister = document.querySelector(".modal-register");
@@ -129,7 +129,7 @@ console.log(
         document.body.classList.remove("scroll-off");
     });
 
-    // Carousel-buttons
+    // ---------- Carousel-buttons ---------- //
 
     const BTN_FIRST = document.querySelector("#btn-first");
     const BTN_SECOND = document.querySelector("#btn-second");
@@ -170,5 +170,87 @@ console.log(
         BTN_FIRST.addEventListener("click", moveFirst);
         BTN_SECOND.addEventListener("click", moveSecond);
         BTN_THIRD.addEventListener("click", moveThird);
+    });
+
+    // ---------- Local Storage ---------- //
+
+    // localStorage.clear();
+
+    const formRegister = document.querySelector(".form-modal-register");
+    const formLogin = document.querySelector(".form-modal-login");
+    const firstName = document.getElementById("first-name");
+    const lastName = document.getElementById("last-name");
+    const emailReg = document.getElementById("email-reg");
+    const passwordReg = document.getElementById("password-reg");
+    const buttonReg = document.getElementById("button-reg");
+    const emailLogin = document.getElementById("email-login");
+    const passwordLogin = document.getElementById("password-login");
+    const buttonLogin = document.getElementById("button-login");
+
+    // ---------- Registration ---------- //
+
+    // localStorage.setItem("usersArray", JSON.stringify([])); // remove data from array
+    // localStorage.setItem("loginStatus", false);
+
+    let users = JSON.parse(localStorage.getItem("usersArray"));
+
+    console.log(users);
+
+    class NewUser {
+        constructor(name, surname, email, password) {
+            this.name = name;
+            this.surname = surname;
+            this.email = email;
+            this.password = password;
+        }
+    }
+
+    function registerNewUser() {
+        if (
+            firstName.value &&
+            lastName.value &&
+            emailReg.value &&
+            passwordReg.value
+        ) {
+            users.push(
+                new NewUser(
+                    firstName.value,
+                    lastName.value,
+                    emailReg.value,
+                    passwordReg.value
+                )
+            );
+            localStorage.setItem("usersArray", JSON.stringify(users));
+        }
+    }
+
+    buttonReg.addEventListener("click", () => {
+        registerNewUser;
+        document.body.classList.remove("formRegister");
+    });
+
+    // ---------- Log In ---------- //
+
+    buttonLogin.onclick = function () {
+        if (emailLogin.value && passwordLogin.value) {
+            for (let i = 0; i < users.length; i++) {
+                console.log(users[i]);
+                if (
+                    users[i].email === emailLogin.value &&
+                    users[i].password === passwordLogin.value
+                ) {
+                    console.log(users[i]);
+                    localStorage.setItem("loginStatus", true);
+                    window.location.href = "index.html";
+                }
+            }
+        }
+    };
+
+    // Unscroll page
+
+    const pageOffset = pageYOffset;
+    window.scrollTo({
+        top: pageOffset,
     });
 })();
