@@ -139,7 +139,7 @@
                     </div>
                     <div class="about-carousel">
                         <div class="carousel-button" id="btn-first">
-                            <button class="carousel-btn"></button>
+                            <button class="carousel-btn active"></button>
                         </div>
 
                         <div class="carousel-button" id="btn-second">
@@ -171,6 +171,7 @@
                                 id="winter"
                                 type="radio"
                                 name="seasons"
+                                data-show="winter"
                                 value="winter"
                                 checked
                             />
@@ -184,6 +185,7 @@
                                 id="spring"
                                 type="radio"
                                 name="seasons"
+                                data-show="spring"
                                 value="spring"
                             />
                             <label class="radio-text" for="spring"
@@ -196,6 +198,7 @@
                                 class="radio-btn"
                                 type="radio"
                                 name="seasons"
+                                data-show="summer"
                                 value="summer"
                             />
                             <label for="summer" class="radio-text"
@@ -208,6 +211,7 @@
                                 class="radio-btn"
                                 type="radio"
                                 name="seasons"
+                                data-show="autumn"
                                 value="autumn"
                             />
                             <label for="autumn" class="radio-text"
@@ -215,7 +219,7 @@
                             >
                         </div>
                     </form>
-                    <div class="favorites-items winter-books">
+                    <div class="winter-books-active">
                         <div class="book-card">
                             <div class="first-book">
                                 <div class="book-description">
@@ -336,7 +340,7 @@
                         </div>
                     </div>
 
-                    <div class="favorites-items spring-books">
+                    <div class="spring-books">
                         <div class="book-card">
                             <div class="first-book">
                                 <div class="book-description">
@@ -450,7 +454,7 @@
                         </div>
                     </div>
 
-                    <div class="favorites-items summer-books">
+                    <div class="summer-books">
                         <div class="book-card">
                             <div class="first-book">
                                 <div class="book-description">
@@ -571,7 +575,7 @@
                         </div>
                     </div>
 
-                    <div class="favorites-items autumn-books">
+                    <div class="autumn-books">
                         <div class="book-card">
                             <div class="first-book">
                                 <div class="book-description">
@@ -985,7 +989,7 @@
                     </form>
                     <div class="modal-menu-footer">
                         <span>Already have an account?</span
-                        ><a class="modal-menu-footer-login" href="#">Login</a>
+                        ><a class="modal-menu-footer-login">Login</a>
                     </div>
                     <div class="modal-menu-close-btn close-modal-register">
                         <svg
@@ -1034,9 +1038,7 @@
                     </form>
                     <div class="modal-menu-footer">
                         <span>Don’t have an account?</span
-                        ><a class="modal-menu-footer-register" href="#"
-                            >Register</a
-                        >
+                        ><a class="modal-menu-footer-register">Register</a>
                     </div>
                     <div class="modal-menu-close-btn close-modal-login">
                         <svg
