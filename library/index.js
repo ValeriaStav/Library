@@ -1,9 +1,7 @@
-console.log(
-    "✅ Просьба к проверяющему - если не затруднит, перепроверь, пожалуйста, работу перед окончанием срока проверки ещё раз, может быть ещё успею доделать 🙏🏻)"
-);
+console.log("✅ Спасибо за проверку! 🙏🏻\n\n)");
 
 (function () {
-    // Burger-menu
+    // ---------- Burger-menu ---------- //
 
     const headerBurger = document.querySelector(".header-burger");
     const menuBurger = document.querySelector(".header-nav");
@@ -27,7 +25,7 @@ console.log(
         menuBurger.classList.remove("header-nav-active");
     });
 
-    // Header icon
+    // ---------- Header icon ---------- //
 
     const headerIcon = document.querySelector(".header-icon");
     const menuProfile = document.querySelector(".menu-profile");
@@ -55,7 +53,7 @@ console.log(
         menuProfile.classList.toggle("menu-profile-active");
     });
 
-    // Modals
+    // ---------- Modals ---------- //
 
     const modalLogin = document.querySelector(".modal-login");
     const modalRegister = document.querySelector(".modal-register");
@@ -129,7 +127,7 @@ console.log(
         document.body.classList.remove("scroll-off");
     });
 
-    // Carousel-buttons
+    // ---------- Carousel-buttons ---------- //
 
     const BTN_FIRST = document.querySelector("#btn-first");
     const BTN_SECOND = document.querySelector("#btn-second");
@@ -140,14 +138,21 @@ console.log(
 
     const moveFirst = () => {
         CAROUSEL.classList.add("transition-first");
+        CAROUSEL.classList.remove("transition-second");
+        CAROUSEL.classList.remove("transition-third");
         BTN_FIRST.removeEventListener("click", moveFirst);
     };
     const moveSecond = () => {
         CAROUSEL.classList.add("transition-second");
-        BTN_SECOND.removeEventListener("click", moveSecond);
+        CAROUSEL.classList.remove("transition-first");
+        CAROUSEL.classList.remove("transition-third");
+
+        // BTN_SECOND.removeEventListener("click", moveSecond);
     };
     const moveThird = () => {
         CAROUSEL.classList.add("transition-third");
+        CAROUSEL.classList.remove("transition-first");
+        CAROUSEL.classList.remove("transition-second");
         BTN_THIRD.removeEventListener("click", moveThird);
     };
 
@@ -157,18 +162,157 @@ console.log(
 
     BTN_THIRD.addEventListener("click", moveThird);
 
+    const firstItem = document.querySelector("#item-first");
+    console.log(firstItem);
+    const secondItem = document.querySelector("#item-second");
+    const thirdItem = document.querySelector("#item-third");
+    const fourthItem = document.querySelector("#item-fourth");
+    const fifthItem = document.querySelector("#item-fifth");
+
     CAROUSEL.addEventListener("animationend", (animationEvent) => {
-        if (animationEvent.animationsName === "move-first") {
-            CAROUSEL.classList.remove("transition-first");
-            const firstItem = document.querySelector("#item-first").innerHTML;
-            document.querySelector("#item-second").innerHTML = firstItem;
-        } else if (animation.animationsName === "move-second") {
-            CAROUSEL.classList.remove("transition-second");
-        } else if (animation.animationsName === "move-third") {
-            CAROUSEL.classList.remove("transition-third");
+        if (animationEvent.animationsName === "move-second") {
+            // firstItem.innerHTML = secondItem;
+            // secondItem.innerHTML = thirdItem;
+            // thirdItem.innerHTML = fourthItem;
+            firstItem.innerHTML = secondItem.innerHTML;
+            secondItem.innerHTML = thirdItem.innerHTM;
+            thirdItem.innerHTML = fourthItem.innerHTM;
+        } else if (animationEvent.animationsName === "move-third") {
+            secondItem.innerHTML = thirdItem;
+            thirdItem.innerHTML = fourthItem;
+            fourthItem.innerHTML = fifthItem;
         }
-        BTN_FIRST.addEventListener("click", moveFirst);
-        BTN_SECOND.addEventListener("click", moveSecond);
-        BTN_THIRD.addEventListener("click", moveThird);
+    });
+
+    // ---------- Favorites ---------- //
+
+    const winterBtn = document.querySelector("#winter");
+    const springBtn = document.querySelector("#spring");
+    const summerBtn = document.querySelector("#summer");
+    const autumnBtn = document.querySelector("#autumn");
+    const winterBooks = document.querySelector(
+        ".winter-books-active",
+        ".winter-books"
+    );
+    const springBooks = document.querySelector(
+        ".spring-books",
+        ".spring-books-active"
+    );
+    const summerBooks = document.querySelector(
+        ".summer-books",
+        ".summer-books-active"
+    );
+    const autumnBooks = document.querySelector(
+        ".autumn-books",
+        ".autumn-books-active"
+    );
+
+    winterBtn.addEventListener("click", () => {
+        winterBooks.classList.replace("winter-books", "winter-books-active");
+        springBooks.classList.replace("spring-books-active", "spring-books");
+        summerBooks.classList.replace("summer-books-active", "summer-books");
+        autumnBooks.classList.replace("autumn-books-active", "autumn-books");
+    });
+    springBtn.addEventListener("click", () => {
+        winterBooks.classList.replace("winter-books-active", "winter-books");
+        springBooks.classList.replace("spring-books", "spring-books-active");
+        summerBooks.classList.replace("summer-books-active", "summer-books");
+        autumnBooks.classList.replace("autumn-books-active", "autumn-books");
+    });
+
+    summerBtn.addEventListener("click", () => {
+        winterBooks.classList.replace("winter-books-active", "winter-books");
+        springBooks.classList.replace("spring-books-active", "spring-books");
+        summerBooks.classList.replace("summer-books", "summer-books-active");
+        autumnBooks.classList.replace("autumn-books-active", "autumn-books");
+    });
+
+    autumnBtn.addEventListener("click", () => {
+        winterBooks.classList.replace("winter-books-active", "winter-books");
+        springBooks.classList.replace("spring-books-active", "spring-books");
+        summerBooks.classList.replace("summer-books-active", "summer-books");
+        autumnBooks.classList.replace("autumn-books", "autumn-books-active");
+    });
+
+    // ---------- Local Storage ---------- //
+
+    // localStorage.clear();
+
+    const formRegister = document.querySelector(".form-modal-register");
+    const formLogin = document.querySelector(".form-modal-login");
+    const firstName = document.getElementById("first-name");
+    const lastName = document.getElementById("last-name");
+    const emailReg = document.getElementById("email-reg");
+    const passwordReg = document.getElementById("password-reg");
+    const buttonReg = document.getElementById("button-reg");
+    const emailLogin = document.getElementById("email-login");
+    const passwordLogin = document.getElementById("password-login");
+    const buttonLogin = document.getElementById("button-login");
+
+    // ---------- Registration ---------- //
+
+    // localStorage.setItem("usersArray", JSON.stringify([])); // remove data from array
+    // localStorage.setItem("loginStatus", false);
+
+    let users = JSON.parse(localStorage.getItem("usersArray"));
+
+    console.log(users);
+
+    class NewUser {
+        constructor(name, surname, email, password) {
+            this.name = name;
+            this.surname = surname;
+            this.email = email;
+            this.password = password;
+        }
+    }
+
+    function registerNewUser() {
+        if (
+            firstName.value &&
+            lastName.value &&
+            emailReg.value &&
+            passwordReg.value
+        ) {
+            users.push(
+                new NewUser(
+                    firstName.value,
+                    lastName.value,
+                    emailReg.value,
+                    passwordReg.value
+                )
+            );
+            localStorage.setItem("usersArray", JSON.stringify(users));
+        }
+    }
+
+    buttonReg.addEventListener("click", () => {
+        registerNewUser;
+        document.body.classList.remove("formRegister");
+    });
+
+    // ---------- Log In ---------- //
+
+    buttonLogin.onclick = function () {
+        if (emailLogin.value && passwordLogin.value) {
+            for (let i = 0; i < users.length; i++) {
+                console.log(users[i]);
+                if (
+                    users[i].email === emailLogin.value &&
+                    users[i].password === passwordLogin.value
+                ) {
+                    console.log(users[i]);
+                    localStorage.setItem("loginStatus", true);
+                    window.location.href = "index.html";
+                }
+            }
+        }
+    };
+
+    // Unscroll page
+
+    const pageOffset = pageYOffset;
+    window.scrollTo({
+        top: pageOffset,
     });
 })();
